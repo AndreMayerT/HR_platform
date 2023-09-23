@@ -5,3 +5,4 @@ from .models import Company
 # Create your views here.
 class CompanyCreate(CreateView):
     model = Company
+    fields = ['name']

@@ -7,7 +7,7 @@
     {% if user.employee.company %}
         <a href="">Edit company</a>
     {% else %}
-        <a href="">Create company</a>
+        <a href="{% url "create_company" %}">Create company</a>
     {% endif %}
     
 {% endblock main %}
