@@ -5,7 +5,7 @@
     <a href="{% url "logout" %}">Logout</a>
 
     {% if user.employee.company %}
-        <a href="">Edit company</a>
+        <a href="{% url "edit_company" user.employee.company.id %}">Edit company</a>
     {% else %}
         <a href="{% url "create_company" %}">Create company</a>
     {% endif %}
