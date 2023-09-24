@@ -4,7 +4,8 @@
     <h1>Employee List</h1>
 
     {% for employee in object_list %}
-       <a href="{% url "employee_update" employee.id %}"> {{ employee }} </a><br>
+       <a href="{% url "employee_update" employee.id %}"> {{ employee }} </a>
+       <a href="{% url "employee_delete" employee.id %}">Delete</a>
+       <br>
     {% endfor %}
 {% endblock main %}
-
