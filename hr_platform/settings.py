@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'apps.departments',
     'apps.documents',
     'apps.overtime',
-    'apps.core'
+    'apps.core',
+    'bootstrapform'
 ]
 
 MIDDLEWARE = [
