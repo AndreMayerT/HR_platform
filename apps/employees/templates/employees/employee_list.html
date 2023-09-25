@@ -8,4 +8,6 @@
        <a href="{% url "employee_delete" employee.id %}">Delete</a>
        <br>
     {% endfor %}
+
+    <a href="{% url "employee_create" %}" class="btn btn-info">New</a>
 {% endblock main %}
