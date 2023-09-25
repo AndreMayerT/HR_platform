@@ -12,3 +12,13 @@ class DepartmentsList(ListView):
         company = self.request.user.employee.company
 
         return Department.objects.filter(company=company)
+    
+class DepartmentsCreate(CreateView):
+    model = Department
+    fields = ['name']
+
+    def form_valid(self, form):
+        department = form.save(commit=False)
+        department.company = self.request.user.employee.company
+        department.save()
+        return super(DepartmentsCreate, self).form_valid(form)
