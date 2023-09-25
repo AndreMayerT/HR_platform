@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Department
 from django.db.models.query import QuerySet
 from typing import Any
@@ -22,3 +23,11 @@ class DepartmentsCreate(CreateView):
         department.company = self.request.user.employee.company
         department.save()
         return super(DepartmentsCreate, self).form_valid(form)
+    
+class DepartmentsUpdate(UpdateView):
+    model = Department
+    fields = ['name']
+
+class DepartmentsDelete(DeleteView):
+    model = Department
+    success_url = reverse_lazy('departments_list')

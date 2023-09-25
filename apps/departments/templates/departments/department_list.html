@@ -4,8 +4,9 @@
     <h1>Departments List</h1>
 
     {% for department in object_list %}
-       <a href=""> {{ department }} </a>
-       <a href="">Delete</a>
+       <a href="{% url "departments_update" department.id%}"> {{ department }} </a>
+
+       <a href="{% url "departments_delete" department.id%}">Delete</a>
        <br>
     {% endfor %}
 
